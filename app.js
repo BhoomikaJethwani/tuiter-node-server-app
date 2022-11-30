@@ -4,6 +4,9 @@ import HelloController
 import UsersController from "./controllers/users-controller.js";
 import TuitsController from "./controllers/tuits/tuits-controller.js";
 import cors from "cors";
+import mongoose from "mongoose";
+
+mongoose.connect('mongodb+srv://giuseppi:<supersecretpassword>@cluster0.yaes3td.mongodb.net/?retryWrites=true&w=majority');
 
 const app = express()
 app.use(cors())
