@@ -5,6 +5,9 @@ import UsersController from "./controllers/users-controller.js";
 import TuitsController from "./controllers/tuits/tuits-controller.js";
 import cors from "cors";
 
+
+const PORT = process.env.PORT || 4000
+
 const app = express()
 app.use(cors())
 app.use(express.json());
@@ -13,4 +16,12 @@ app.use(express.json());
 HelloController(app)
 UsersController(app)
 TuitsController(app)
-app.listen(process.env.PORT ||4000)
+app.listen(PORT,(error) =>
+    {
+
+        console.log("Server running on PORT: " + PORT);
+        console.log({error})
+    }
+
+
+)
