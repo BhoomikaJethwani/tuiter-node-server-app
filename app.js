@@ -5,9 +5,9 @@ import UsersController from "./controllers/users-controller.js";
 import TuitsController from "./controllers/tuits/tuits-controller.js";
 import cors from "cors";
 import mongoose from "mongoose";
-//const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
-//    || 'mongodb://localhost:27017/tuiter'
-mongoose.connect('mongodb://localhost:27017/tuiter');
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
+   || 'mongodb://localhost:27017/tuiter'
+ mongoose.connect(CONNECTION_STRING);
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,7 +18,7 @@ const options = {
     family: 4 // Use IPv4, skip trying IPv6
 }
 
-//mongoose.connect('mongodb+srv://giuseppi:<>@cluster0.yaes3td.mongodb.net/tuiter?retryWrites=true&w=majority');
+//mongoose.connect('mongodb+srv://giuseppi:supersecretpassword@cluster0.yaes3td.mongodb.net/tuiter?retryWrites=true&w=majority');
 
 const app = express()
 app.use(cors())
